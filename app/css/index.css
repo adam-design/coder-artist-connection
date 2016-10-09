@@ -80,7 +80,22 @@ input[type=checkbox]:not(.first)
     margin-right: 5px;
 }
 
-#popup
+a
+{
+	text-decoration: none;
+	color: #4A4A4A;
+}
+
+#popup2
+{
+	width: 300px !important;
+	height: 250px !important;
+	margin-top: -125px !important;
+	margin-left: -150px !important;
+	padding: 20px;
+}
+
+#popup, #popup2
 {
 	width: 750px;
 	height: 500px;

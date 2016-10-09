@@ -1,7 +1,15 @@
+#!/bin/python
+
+
 import cherrypy
+import dataset
+import md5
 
-# connect to a database
-
+def connect():
+#	db = dataset.connect('sqlite:///:memory:')
+	db = dataset.connect('sqlite:///data.db')
+	table = db['users']
+	return table
 
 def contents(filename):
 	f = open(filename)
@@ -12,7 +20,6 @@ def contents(filename):
 def clarify(kwargs):
 	out = "You gave me: <br>"
 	for key in kwargs:
-		print "HELLO HELLO ", key, kwargs[key]
 		out += key + " = " + str(kwargs[key]) + "<br>"
 
 	return out
@@ -25,6 +32,27 @@ class Root(object):
 	def index(self):
 		return inject_navbar(contents('app/index.html'))
 	index.exposed = True
+	
+	@cherrypy.expose
+	def signup(self, *args, **kwargs):
+		# connect to a database
+		table = connect()
+		username = kwargs["username"]
+		password = kwargs["password"]
+		if password != kwargs["confirm"]:
+			return "passwords don't match"
+			
+		# hash password
+		m = md5.new()
+		m.update(password)
+		hashed = m.hexdigest()
+		if table.find_one(username=username):
+			return "user already exists"
+		
+		# insert the user into the database
+		table.insert(dict(username=username, password=hashed))
+		
+		return "User " + username + " created successsfully!"
 	
 	@cherrypy.expose
 	def create(self):

@@ -26,7 +26,14 @@ function setup()
 	$("#background").click(function() {
 		$("#background").fadeOut();
 		$("#popup").fadeOut();
+		$("#popup2").fadeOut();
 	});
+}
+
+function popup2()
+{
+	$("#background").fadeIn();
+	$("#popup2").fadeIn();
 }
 
 function popup()
