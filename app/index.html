@@ -38,18 +38,27 @@
 	
 </div>
 	<div hidden id="halfform">
-	Genre?
-	<input type='checkbox'>Cartoon</input><input type='checkbox'>Realistic</input>
-	<br>
-	Background?
-	<select><option>School</option><option>Working Experience</option></select>
-	<br>
-	Desire?
-	<input type='checkbox'>Gain Experience</input><input type='checkbox'>Join Team</input><input type='checkbox'>Earn Money</input>
-	<br>
-	Interested Topic: 
-	<input type='checkbox'>Webdesign</input> <input type='checkbox'>Game Graphics</input> <input type='checkbox'>Design</input> <input type='checkbox'>VR</input>
-	<br>
-	<input type='submit' value='Submit'></input>
-</div>
+		Genre?
+		<input name="genre" type='checkbox' value="cartoon">Cartoon
+		<input name="genre"  type='checkbox' value="realistic">Realistic
+		<br>
+		Background?
+		<select name="experience">
+			<option value="school">School</option>
+			<option value="work">Working Experience</option
+		></select>
+		<br>
+		Desire?
+		<input type='checkbox' value="exp" 	 name="desire">Gain Experience
+		<input type='checkbox' value="team"	 name="desire" >Join Team
+		<input type='checkbox' value="money" name="desire">Earn Money
+		<br>
+		Interested Topic: 
+		<input type='checkbox' name="topic" value="web">Webdesign
+		<input type='checkbox' name="topic" value="game">Game Graphics
+		<input type='checkbox' name="topic" value="design">Design
+		<input type='checkbox' name="topic" value="vr">VR
+		<br>
+		<input type='submit' value='Submit'>
+	</div>
 </body>

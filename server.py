@@ -23,8 +23,8 @@ class Root(object):
 		return contents('app/create.html')
 	
 	@cherrypy.expose
-	def search(self):
-		thing = contents('app/search.html')
-		return thing
+	def search(self, *args, **kwargs):
+		if cherrypy.request.method == "POST":
+			return kwargs
 
 cherrypy.quickstart(Root(), "", "app.conf")
