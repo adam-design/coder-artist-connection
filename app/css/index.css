@@ -1,0 +1,115 @@
+body
+{
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: white;
+}
+
+#totaldiv
+{
+	margin: 0 auto;
+	width: 900px;
+}
+
+.maintext
+{
+	z-index: 100;
+	width: 900px;
+	border: 1px solid black;
+	margin-top: -325px;
+	text-align: center;
+	font-weight: 800;
+}
+
+.header
+{
+	font-size: 36px;
+	color: #FFFFFF;
+}
+
+#selector
+{
+	margin-top: -10px;
+	font-size: 18px;
+	color: rgba(0,0,0,0.67);
+}
+.subheader
+{
+	font-size: 14px;
+	color: #FFFFFF;
+	letter-spacing: 2px;
+}
+
+#navbar
+{
+	background-color: white;
+	height: 50px;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+	
+}
+
+.maintextbg
+{
+	background-color: rgba(215,215,215,0.40);
+	opacity: 0.99999;
+	width: 400px;
+	margin-left: 250px;
+	height: 75px;
+	margin-top: -17px;
+	border-radius: 8px;
+	z-index: 1;
+	position: absolute;
+}
+
+#background
+{
+	background-color: #000;
+	opacity: 0.6;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	z-index: 1000;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+
+#popup
+{
+	width: 750px;
+	height: 500px;
+	background-color: white;
+	z-index: 99999;
+	border-radius: 14px;
+	margin: 0 auto;
+	left: 50%;
+	top: 50%;
+/*	opacity: 0.8;*/
+	margin-left: -375px;
+	position: absolute;
+	margin-top: -250px;
+}
+
+.mainimage
+{
+	margin: 0 auto;
+	margin-top: 25px;
+	width: 100%;
+}
+
+#navbar img
+{     
+	float: left;
+	height: 50px;
+}
+#buttons div
+{
+	width: 100px;
+	float: right;
+	text-align: center;
+	height: 50px;
+	font-size: 16px;
+	font-weight: 800;
+	line-height: 48px;
+	border-left: 1px solid #979797;
+	color: #4A4A4A;
+}

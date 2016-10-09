@@ -1,0 +1,55 @@
+<head>
+	<title>Find My Teammate</title>
+	<script src="lib/jquery-3.1.1.min.js"></script>
+	<script src="app/js/index.js"></script>
+	<link rel="stylesheet" href="app/css/index.css" />
+</head>
+<div id="totaldiv">
+{NAVBAR}
+
+<body onload="setup()">
+<img class="mainimage" src="app/img/hero-header-image.jpg" />
+
+<div class="maintext">
+	<div class="header">Find My Teammate</div>
+	<div class="subheader">find the best teammate for your project</div>
+	<br><br>
+<!--
+	<div class="maintextbg">
+	</div>
+-->
+	<div id="selector">
+		I am <span id="aa">a</span>
+		<select id="dropa" onchange="updateDropdown('a')"><option>Developer</option><option>Artist</option></select>
+		seeking <span id="ab">an</span>
+		<select id="dropb" onchange="updateDropdown('b')"><option>Developer</option><option selected>Artist</option></select>
+	<br><br>
+	<button onclick="popup()">Let's go!</button>
+	</div>
+	
+</div>
+	
+</div>
+
+<div hidden id="background">
+
+</div>
+<div hidden id="popup">
+	
+</div>
+	<div hidden id="halfform">
+	Genre?
+	<input type='checkbox'>Cartoon</input><input type='checkbox'>Realistic</input>
+	<br>
+	Background?
+	<select><option>School</option><option>Working Experience</option></select>
+	<br>
+	Desire?
+	<input type='checkbox'>Gain Experience</input><input type='checkbox'>Join Team</input><input type='checkbox'>Earn Money</input>
+	<br>
+	Interested Topic: 
+	<input type='checkbox'>Webdesign</input> <input type='checkbox'>Game Graphics</input> <input type='checkbox'>Design</input> <input type='checkbox'>VR</input>
+	<br>
+	<input type='submit' value='Submit'></input>
+</div>
+</body>
