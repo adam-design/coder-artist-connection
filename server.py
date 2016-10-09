@@ -18,6 +18,7 @@ import cherrypy
 import dataset
 import md5
 import datetime
+import json
 
 def login(username, password):
 	table = connect()
@@ -34,6 +35,17 @@ def login(username, password):
 		return True
 	else:
 		return False
+	
+def match_score(key, inp, outp):
+	if key in inp and key in outp:
+		if inp[key] == outp[key]:
+			return 1
+		
+		if type(inp[key]) == list and type(outp[key]) == list:
+			for a in inp[key]:
+				for b in outp[key]:
+					return 1
+	return 0
 	
 def notice(text):
 	return "<div class='notice'>" + text + "</div>"
@@ -143,7 +155,17 @@ class Root(object):
 	
 	@cherrypy.expose
 	def update(self, *args, **kwargs):
-		return clarify(kwargs)
+		# go through all of the kwargs and put them into the
+		# dataset db for this username
+		if "username" in kwargs:
+			return "Error"
+		
+		info = {"username": get_username()}
+		info.update(kwargs)
+		
+		table = connect()
+		table.update(info, ['username'])
+		return self.index() + notice("Profile updated successfully!")
 	
 	@cherrypy.expose
 	def ping(self):
@@ -164,16 +186,39 @@ class Root(object):
 	
 	@cherrypy.expose
 	def search(self, *args, **kwargs):
-		return clarify(kwargs)
-	#		if cherrypy.request.method == "POST":
-#			if "desire" in kwargs:
-#				pass
-#			if "experience" in kwargs:
-#				pass
-#			if "genre" in kwargs:
-#				pass
-#			if "topic" in kwargs:
-#				pass
-#			return kwargs
+		table = connect()
+		#TODO: make this a lot faster
+		alll = table.all()
+		
+		matches = []
+		out = ""
+		for a in alll:
+			out += str(a)
+			match = 0
+			total = 0.0
+			
+			if "email" not in a:
+				continue
+#				
+			if 'username' not in a:
+				continue
+			
+			username = a["username"]
+				
+			for key in kwargs:
+				match += match_score(key, kwargs, a)
+				total += 1
+
+			if total == 0:
+				continue
+			
+			# generate the array of percents
+			matches.append([match/total, username])
+			
+		matches.sort()
+		matches.reverse()
+			
+		return str(matches)
+		
 
 cherrypy.quickstart(Root(), "", "app.conf")

@@ -19,6 +19,7 @@ By pairing artists and coders who are interested in similar projects, the artist
 #### Frontend
 
 - jquery
+- progressbar.js
 
 #### Design
 
