@@ -2,7 +2,7 @@ function generateSearchForm()
 {
 	var seeker = $("#dropa").find(":selected").text();
 	var target = $("#dropb").find(":selected").text();
-	form = "<h1>What kind of artist?</h1>";
+	form = ""
 	form += "<form action='search' method='post'>";
 	form += "<input type='hidden' value='"+seeker+"' name='seeker'></input>";
 	form += "<input type='hidden' value='"+target+"' name='target'></input>";

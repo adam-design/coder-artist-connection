@@ -22,7 +22,7 @@ body
 
 .header
 {
-	font-size: 36px;
+	font-size: 50px;
 	color: #FFFFFF;
 }
 
@@ -68,9 +68,16 @@ body
 	height: 100%;
 	margin: 0 auto;
 	z-index: 1000;
+	opacity: 0.1;
 	position: absolute;
 	top:0;
 	left: 0;
+}
+
+input[type=checkbox]:not(.first)
+{
+    margin-left: 40px;
+    margin-right: 5px;
 }
 
 #popup
@@ -82,11 +89,19 @@ body
 	border-radius: 14px;
 	margin: 0 auto;
 	left: 50%;
+	opacity: 0.9;
 	top: 50%;
 /*	opacity: 0.8;*/
 	margin-left: -375px;
 	position: absolute;
 	margin-top: -250px;
+}
+
+form
+{
+    position:absolute;
+    left:50px;
+
 }
 
 .mainimage
