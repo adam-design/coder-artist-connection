@@ -14,7 +14,7 @@ By pairing artists and coders who are interested in similar projects, the artist
 #### Backend
 
 - cherrypy
-- dataset
+- dataset (with sqlite3)
 
 #### Frontend
 

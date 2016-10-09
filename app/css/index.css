@@ -69,9 +69,37 @@ body
 	margin: 0 auto;
 	z-index: 1000;
 	opacity: 0.1;
-	position: absolute;
+	position: fixed;
 	top:0;
 	left: 0;
+}
+
+.centerme
+{
+	margin: 0 auto;
+	width: 900px;
+	border: 1px solid black;
+	left: 50%;
+	position: relative;
+	margin-left: -450px;
+}
+
+.notice
+{
+	background-color: indianred;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	margin-top: -14px;
+	left: 50%;
+	margin-left: -200px;
+	border-radius: 14px;
+	width: 400px;
+	font-size: 20px;
+	padding: 20px;
+	padding-bottom: 10px;
+	color: white;
+	font-weight: 800;
 }
 
 input[type=checkbox]:not(.first)
@@ -86,7 +114,7 @@ a
 	color: #4A4A4A;
 }
 
-#popup2
+#popup2, #popup3
 {
 	width: 300px !important;
 	height: 250px !important;
@@ -95,7 +123,7 @@ a
 	padding: 20px;
 }
 
-#popup, #popup2
+#popup, #popup2, #popup3
 {
 	width: 750px;
 	height: 500px;

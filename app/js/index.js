@@ -27,13 +27,23 @@ function setup()
 		$("#background").fadeOut();
 		$("#popup").fadeOut();
 		$("#popup2").fadeOut();
+		$("#popup3").fadeOut();
 	});
+	
+	if ($(".notice").length != 0)
+		$(".notice").delay(2000).fadeOut();
 }
 
 function popup2()
 {
 	$("#background").fadeIn();
 	$("#popup2").fadeIn();
+}
+
+function popup3()
+{
+	$("#background").fadeIn();
+	$("#popup3").fadeIn();
 }
 
 function popup()
